@@ -1,0 +1,26 @@
+name: C++ CI
+
+on:
+  push:
+    branches:
+      - main  # 当 main 分支有代码推送时触发工作流
+  pull_request:
+    branches:
+      - main  # 当有针对 main 分支的 PR 时触发工作流
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 检出代码
+
+    - name: Set up C++ compiler
+      uses: actions/setup-cpp@v2  # 设置 C++ 编译环境
+
+    - name: Build
+      run: make  # 执行编译命令
+
+    # - name: Test
+    #   run: make test  # 执行测试命令

@@ -20,7 +20,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y g++  # 设置 C++ 编译环境
 
     - name: Build
-      run: make  # 执行编译命令
+      run: g++ main.cpp -o main  # 执行编译命令
 
     - name: Test
       run: ./main # run
